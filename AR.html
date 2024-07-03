@@ -1,15 +1,48 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-  </head>
-  <body style="margin : 0px; overflow: hidden;">
-    <a-scene embedded arjs="sourceType: webcam;">
-      <!-- 添加一个3D模型 -->
-      <a-gltf-model src="https://evantgy.github.io/Guiyin.github.io/uploads_files_4650902_1.gltf" position="0 1 -5" scale="0.5 0.5 0.5" rotation="0 180 0"></a-gltf-model>
-      <!-- 定义一个简单的标记 -->
-      <a-marker-camera preset="hiro"></a-marker-camera>
-    </a-scene>
-  </body>
+<head>
+  <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+  <style>
+    .arjs-loader {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .arjs-loader div {
+      text-align: center;
+      font-size: 1.25em;
+      color: white;
+    }
+  </style>
+</head>
+<body style="margin : 0px; overflow: hidden;">
+  <div class="arjs-loader">
+    <div>Loading, please wait...</div>
+  </div>
+  <a-scene
+    vr-mode-ui="enabled: false;"
+    renderer="logarithmicDepthBuffer: true;"
+    embedded
+    arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+  >
+    <!-- 如果你想使用NFT图像跟踪，请确保你的<a-nft>标签正确配置 -->
+    <!-- 例如: <a-nft type="nft" url="path/to/your/nft/descriptor" preset="hiro"> -->
+    <!-- 在这里添加你的3D模型或其他AR内容 -->
+    <a-entity
+      gltf-model="https://evantgy.github.io/Guiyin.github.io/uploads_files_4650902_1.gltf"
+      scale="5 5 5"
+      position="50 150 0"
+    >
+    </a-entity>
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
 </html>
