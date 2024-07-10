@@ -40,28 +40,26 @@
       <!-- 路径应该以名称结束，无需扩展名。举例来说，如果文件是“pinball.fset”那么路径的结尾单次就是“pinball” -->
       <a-nft
         type="nft"
-        url="https://EvanTGY.github.io/Guiyin.github.io/NFT/MA"
+        url="https://EvanTGY.github.io/Guiyin.github.io/NFT/Visioneers"
         smooth="true"
         smoothCount="10"
         smoothTolerance=".01"
         smoothThreshold="5"
       >
-          <!-- 作为 a-nft 的子元素，您可以定义要显示的内容。下面是一个 GLTF 模型实体 -->
+          <!-- GLTF model -->
           <a-entity
               gltf-model="https://EvanTGY.github.io/Guiyin.github.io/test2.gltf"
               scale="50 50 50"
-              position="50 150 0"
+              position="0 0 0"
           >
           </a-entity>
       </a-nft>
-      <!-- 静态摄像机，根据设备的运动参数进行移动 -->
+      <!-- camera -->
       <a-entity camera></a-entity>
     </a-scene>
     <script>
         window.addEventListener('load', function() {
-          // 监听NFT数据加载完成的事件
           document.body.addEventListener('arjs-nft-loaded', function() {
-            // 当NFT数据加载完成，隐藏加载提示
             document.querySelector('.arjs-loader').style.display = 'none';
           });
         });
